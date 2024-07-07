@@ -19,4 +19,4 @@ jobs:
     - name: Log into Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push Docker image to Docker Hub
-      run: docker build   -t my-image-name:$(date +%s) WetherApi/ 
+      run: docker docker push hubertquang/hubert_repo:my-image-name:$(date +%s)
