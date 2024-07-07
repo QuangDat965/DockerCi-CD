@@ -1,8 +1,16 @@
 ﻿
+using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
+
 namespace WetherApi
 {
     public class StudentService : IStudentService
     {
+        public Guid Id { get; set; }
+        public StudentService()
+        {
+            Id = Guid.NewGuid();
+        }
         public async Task<List<Student>> GetAll()
         {
             var result = new List<Student>()
@@ -13,9 +21,19 @@ namespace WetherApi
             return await Task.FromResult(result);
         }
 
-        public Task<object> GetAny()
+        public async Task<object> GetAny()
         {
-            throw new NotImplementedException();
+            var rs = new
+            {
+                Id = Id,
+                Code = this.GetHashCode()
+            };
+            return await Task.FromResult<object>(rs);
+        }
+        public override int GetHashCode()
+        {
+            // Implementing GetHashCode() based on the name field
+            return Id.GetHashCode();
         }
     }
 }
