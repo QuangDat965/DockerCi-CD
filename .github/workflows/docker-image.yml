@@ -17,7 +17,9 @@ jobs:
     - name: Connect to Docker 
       run: docker -H tcp://103.176.25.7:84 info
     - name: Connect check docker images 
-      run: docker images
+      run: docker -H tcp://103.176.25.7:84 images
+    - name: Connect check docker ps 
+      run: docker -H tcp://103.176.25.7:84 ps
     # - name: Build the Docker image
     #   run: docker build -t hubertquang/hubert_repo:test_image_v1 WetherApi/.
     # - name: Log into Docker Hub
