@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Connect to Docker 
-      run: docker -H tcp://your_vps_ip:84 info
+      run: docker -H tcp://103.176.25.7:84 info
     - name: Connect check docker images 
       run: docker images
     # - name: Build the Docker image
