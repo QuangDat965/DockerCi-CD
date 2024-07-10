@@ -48,5 +48,10 @@ namespace WeatherApi.Controllers
         {
             return Ok(await _studentService.GetAny());
         }
+        [HttpGet("haha", Name = "v2haha")]
+        public async Task<IActionResult> GatId()
+        {
+            return Ok("haha");
+        }
     }
 }
